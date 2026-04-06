@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Works | Ayala Niv</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Slightly larger grid for untitled reels — let the grid breathe */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .personal-card {
+      aspect-ratio: 9/16;
+      background: var(--sage);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--sand);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .personal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      background: #b8c9a8;
+    }
+
+    .personal-card svg {
+      width: 26px;
+      height: 26px;
+      opacity: 0.55;
+    }
+
+    .personal-card span {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .personal-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 1.75rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Ayala Niv</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="social-media.html">Social Media</a></li>
+      <li><a href="music-videos.html">Music Videos</a></li>
+      <li><a href="film-editing.html">Film Editing</a></li>
+      <li><a href="personal-works.html">Personal Works</a></li>
+      <li><a href="other-projects.html">Other Projects</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-wrap">
+    <h1 class="page-title">Personal Works</h1>
+    <hr class="page-rule">
+
+    <p class="personal-note">A collection of personal reels — click to view on Instagram.</p>
+
+    <div class="personal-grid">
+
+      <a class="personal-card" href="https://www.instagram.com/reel/DJmXE3_tnGa/" target="_blank" rel="noopener" aria-label="Personal reel 1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>↗</span>
+      </a>
+
+      <a class="personal-card" href="https://www.instagram.com/reel/C9ednnTNaWr/" target="_blank" rel="noopener" aria-label="Personal reel 2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>↗</span>
+      </a>
+
+      <a class="personal-card" href="https://www.instagram.com/reel/DADzcMitsvR/" target="_blank" rel="noopener" aria-label="Personal reel 3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>↗</span>
+      </a>
+
+      <a class="personal-card" href="https://www.instagram.com/reel/C0MgsLvtug-/" target="_blank" rel="noopener" aria-label="Personal reel 4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>↗</span>
+      </a>
+
+      <a class="personal-card" href="https://www.instagram.com/reel/DChNDfBNkj_/" target="_blank" rel="noopener" aria-label="Personal reel 5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>↗</span>
+      </a>
+
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

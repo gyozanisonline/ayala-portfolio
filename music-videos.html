@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Videos | Ayala Niv</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Ayala Niv</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="social-media.html">Social Media</a></li>
+      <li><a href="music-videos.html">Music Videos</a></li>
+      <li><a href="film-editing.html">Film Editing</a></li>
+      <li><a href="personal-works.html">Personal Works</a></li>
+      <li><a href="other-projects.html">Other Projects</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-wrap">
+    <h1 class="page-title">Music Videos</h1>
+    <hr class="page-rule">
+
+    <div class="card-grid">
+
+      <div class="video-block">
+        <div class="video-ratio" data-src="https://www.youtube.com/embed/zDz_6gF1src?autoplay=1">
+          <img class="video-thumb" src="https://img.youtube.com/vi/zDz_6gF1src/hqdefault.jpg" alt="פשוט — דניאל עמית והסייעות" loading="lazy">
+          <button class="play-overlay" aria-label="הפעל וידאו">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/>
+              <polygon points="26,20 26,44 48,32" fill="white"/>
+            </svg>
+          </button>
+        </div>
+        <div class="video-info">
+          <h2 class="video-title">"פשוט" — דניאל עמית והסייעות</h2>
+          <p class="video-role">תסריט ובימוי</p>
+        </div>
+      </div>
+
+      <div class="video-block">
+        <div class="video-ratio" data-src="https://www.youtube.com/embed/8bKm5lYnzxA?autoplay=1">
+          <img class="video-thumb" src="https://img.youtube.com/vi/8bKm5lYnzxA/hqdefault.jpg" alt="שמן זית — gyozan ומעין גרין" loading="lazy">
+          <button class="play-overlay" aria-label="הפעל וידאו">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/>
+              <polygon points="26,20 26,44 48,32" fill="white"/>
+            </svg>
+          </button>
+        </div>
+        <div class="video-info">
+          <h2 class="video-title">"שמן זית" — gyozan ומעין גרין</h2>
+          <p class="video-role">תסריט, בימוי, צילום, עריכה וארט</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

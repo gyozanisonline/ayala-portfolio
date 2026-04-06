@@ -1,0 +1,590 @@
+/* ─── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #F7F4F0;
+  --sand:       #D9C9B8;
+  --teal:       #B8C9C9;
+  --blush:      #E8C9C9;
+  --sage:       #C9D4C0;
+  --text:       #2A2A2A;
+  --text-light: #7A7A7A;
+  --white:      #FFFFFF;
+  --nav-h:      64px;
+  --max-w:      760px;
+  --radius:     6px;
+  --transition: 0.25s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ─── Typography ────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.page-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--sand);
+  margin: 1rem 0 2.5rem;
+  border: none;
+}
+
+/* ─── Navigation ────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--sand);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius);
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  background: var(--sand);
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Page Layout ───────────────────────────────────── */
+.page-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* ─── Hero (Home) ───────────────────────────────────── */
+.hero {
+  position: relative;
+  height: calc(100vh - var(--nav-h));
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(0.75) brightness(0.92);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(247,244,240,0.82) 0%, rgba(247,244,240,0.1) 55%);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2.5rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero-text p {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* ─── Cards (Video / Instagram) ────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card-grid.single-col {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--sand);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.card-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--sand);
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.card-thumb--teal { background: var(--teal); }
+.card-thumb--blush { background: var(--blush); }
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-thumb img {
+  transform: scale(1.03);
+}
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247,244,240,0.3);
+  transition: background var(--transition);
+}
+
+.card:hover .play-btn {
+  background: rgba(247,244,240,0.15);
+}
+
+.play-btn svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+.card-body {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  direction: rtl;
+  text-align: right;
+}
+
+.card-title.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.card-role {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+  direction: rtl;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+.card-role.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ─── Instagram Embeds ──────────────────────────────── */
+.ig-embed-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Neutralise Instagram's default inline margin so our grid controls spacing */
+.ig-embed-list .instagram-media {
+  margin: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* ─── Client Group ──────────────────────────────────── */
+.client-group {
+  margin-bottom: 3rem;
+}
+
+.client-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.client-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+.client-role-tag {
+  display: inline-block;
+  background: var(--teal);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  direction: rtl;
+}
+
+/* ─── Inline Video Embed ────────────────────────────── */
+.video-block {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.video-ratio {
+  position: relative;
+  padding-top: 56.25%;
+  background: #111;
+}
+
+/* Thumbnail-first: image covers the ratio box */
+.video-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play button overlaid on thumbnail */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.12);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background var(--transition);
+}
+
+.play-overlay:hover { background: rgba(0,0,0,0.28); }
+
+.video-ratio[data-src] { cursor: pointer; }
+
+.video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-info {
+  padding: 0.9rem 1.1rem 1rem;
+  direction: rtl;
+  text-align: right;
+}
+
+.video-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  direction: rtl;
+  text-align: right;
+}
+
+.video-role {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+  direction: rtl;
+  text-align: right;
+}
+
+/* For embeds that can't be iframed — show a tinted placeholder */
+.video-ratio--placeholder {
+  padding-top: 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--teal);
+}
+
+.video-ratio--placeholder a {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.65;
+  border-bottom: 1px solid rgba(42,42,42,0.3);
+  padding-bottom: 1px;
+  transition: opacity var(--transition);
+}
+
+.video-ratio--placeholder a:hover { opacity: 1; }
+
+.video-ratio--placeholder svg { opacity: 0.45; }
+
+/* ─── Lightbox ──────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(42,42,42,0.88);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-inner {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+}
+
+.lightbox-ratio {
+  position: relative;
+  padding-top: 56.25%;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lightbox-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.8;
+  transition: opacity var(--transition);
+  line-height: 1;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+/* ─── Section Divider ───────────────────────────────── */
+.section-divider {
+  margin: 3rem 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  direction: rtl;
+}
+
+.section-divider h2 {
+  font-size: 1.4rem;
+  direction: rtl;
+  text-align: right;
+}
+
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 640px) {
+  .site-nav { padding: 0 1.25rem; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--sand);
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    gap: 0;
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 0.7rem 0.25rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .nav-links li:last-child a { border-bottom: none; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero-text { padding: 2rem 1.5rem; }
+
+  .page-wrap { padding: 2rem 1.25rem 4rem; }
+
+  .card-grid { grid-template-columns: 1fr; }
+
+  .ig-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .project-item { padding: 0.9rem 1rem; }
+}
+
+@media (max-width: 400px) {
+  .ig-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ─── Grid full-span (for group headers inside card-grid) ── */
+.grid-span {
+  grid-column: 1 / -1;
+}
+
+/* ─── Documentary group (header + nested pair) ──────── */
+.doc-group {
+  grid-column: 1 / -1;
+}
+
+.doc-group > .section-divider {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.doc-group > .card-grid {
+  margin: 0;
+}
+
+/* ─── Utilities ─────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: var(--sage);
+  color: var(--text);
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
