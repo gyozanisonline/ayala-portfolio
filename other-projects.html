@@ -137,16 +137,19 @@
             </div>
           </div>
 
-          <!-- מה שמרגיש לי נכון — Vimeo review (private, external link) -->
+          <!-- מה שמרגיש לי נכון — Vimeo review (private, opens externally) -->
           <div class="video-block">
-            <div class="video-ratio video-ratio--placeholder">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="5,3 19,12 5,21"/>
-              </svg>
-              <a href="https://vimeo.com/reviews/c67a3acf-2e29-4a69-99b7-5e0995bb3476/videos/1088769438" target="_blank" rel="noopener">
-                View on Vimeo ↗
-              </a>
-            </div>
+            <a href="https://vimeo.com/reviews/c67a3acf-2e29-4a69-99b7-5e0995bb3476/videos/1088769438" target="_blank" rel="noopener" style="display:block;">
+              <div class="video-ratio" style="cursor:pointer;">
+                <img class="video-thumb" src="מה שמרגיש לי נכון.png" alt="מה שמרגיש לי נכון" loading="lazy">
+                <div class="play-overlay">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/>
+                    <polygon points="26,20 26,44 48,32" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
             <div class="video-info">
               <h2 class="video-title">הפקה ופוקוס פולינג לסרט — ״מה שמרגיש לי נכון״</h2>
             </div>
@@ -154,14 +157,14 @@
 
           <!-- עלמה — Google Drive (Ayala to share publicly) -->
           <div class="video-block">
-            <div class="video-ratio">
-              <iframe
-                src="https://drive.google.com/file/d/188-aX4ZYOTWuSIJiODr33WDgHDSqCYdw/preview"
-                title="עלמה"
-                allowfullscreen
-                allow="autoplay"
-                loading="lazy"
-              ></iframe>
+            <div class="video-ratio" data-src="https://drive.google.com/file/d/188-aX4ZYOTWuSIJiODr33WDgHDSqCYdw/preview">
+              <img class="video-thumb" src="פוקוס פולינג לסרט — ״עלמה״.png" alt="עלמה" loading="lazy">
+              <button class="play-overlay" aria-label="הפעל וידאו">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/>
+                  <polygon points="26,20 26,44 48,32" fill="white"/>
+                </svg>
+              </button>
             </div>
             <div class="video-info">
               <h2 class="video-title">פוקוס פולינג לסרט — ״עלמה״</h2>
